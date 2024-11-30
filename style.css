@@ -1,0 +1,191 @@
+/* Global variables for color themes */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --accent-color: #20c997;
+    --border-color: #dee2e6;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #1e90ff;
+    --secondary-color: #868e96;
+    --accent-color: #28a745;
+    --border-color: #343a40;
+}
+
+/* General body styling */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: Arial, sans-serif; /* Adjust font-family as needed */
+    line-height: 1.6;
+}
+
+/* Custom button style */
+.btn-custom {
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-custom:hover {
+    transform: translateY(-3px);
+}
+
+/* Styling for note titles */
+.note-title {
+    padding: 12px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.note-title:hover {
+    transform: translateX(5px);
+}
+
+.note-title.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* Styling for editor container */
+#editor-container {
+    height: 400px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--background-color);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+/* Styling for notes list */
+#notesList {
+    max-height: 500px;
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Styling for search input */
+#searchNotes {
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table of contents styling */
+.table-of-contents {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-radius: 5px;
+}
+
+.table-of-contents h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.table-of-contents ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 0.5rem;
+}
+
+.table-of-contents a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+}
+
+/* Footnotes styling */
+.footnotes {
+    margin-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+
+.footnotes h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.footnotes ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.footnotes li {
+    margin-bottom: 0.5rem;
+}
+
+.footnote-ref, .back-to-ref {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footnote-ref:hover, .back-to-ref:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #editor-container {
+        height: 300px;
+    }
+    .btn-custom {
+        font-size: 0.9rem;
+    }
+    .table-of-contents h2,
+    .footnotes h2 {
+        font-size: 1rem;
+    }
+    .footnote-ref, .back-to-ref {
+        font-size: 0.7rem;
+    }
+}
